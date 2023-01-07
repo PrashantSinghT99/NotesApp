@@ -24,17 +24,13 @@ function App() {
   }
 
   const onDelete = (Note) => {
-    console.log("I am Ondelete Note", Note);
-
     setNotes(Notes.filter((ele) => {
       return ele !== Note;
     }));
-    console.log("On delete of Note", Notes)
     localStorage.setItem("Notes", JSON.stringify(Notes));
   }
 
   const addNote = (title, NoteText) => {
-    console.log("I am adding the title and noteText", title, NoteText);
     let sno;
     if (Notes.length === 0) {
       sno = 0;
@@ -49,7 +45,6 @@ function App() {
       description: NoteText,
     }
     setNotes([...Notes, myNote]);
-    console.log(myNote);
   }
 
   const [Notes, setNotes] = useState(initNote);
